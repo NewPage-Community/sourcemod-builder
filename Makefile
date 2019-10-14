@@ -8,15 +8,16 @@ SOURCEMOD_BUILD_DIR = ./addons/sourcemod/scripting
 all: env build
 
 .PHONY:env
-env: 
-	wget "http://www.sourcemod.net/latest.php?version=$(SOURCEMOD_VERSION)&os=linux" -q -O sourcemod.tar.gz
-	tar -xzf sourcemod.tar.gz
-	cp -rf $(SOURCEMOD_BUILD_DIR)/include ./ && cp -f $(SOURCEMOD_BUILD_DIR)/spcomp ./ && cp -f $(SOURCEMOD_BUILD_DIR)/compile.sh ./ && chmod +x spcomp
+env:
+	@echo "\nSetting sourcemod $(SOURCEMOD_VERSION) environment..."
+	@wget "http://www.sourcemod.net/latest.php?version=$(SOURCEMOD_VERSION)&os=linux" -q -O sourcemod.tar.gz
+	@tar -xzf sourcemod.tar.gz
+	@cp -rf $(SOURCEMOD_BUILD_DIR)/include ./ && cp -f $(SOURCEMOD_BUILD_DIR)/spcomp ./ && cp -f $(SOURCEMOD_BUILD_DIR)/compile.sh ./ && chmod +x spcomp
 
 .PHONY:build
 build:
-	test -e compiled || mkdir compiled
-	for sourcefile in *.sp; \
+	@test -e compiled || mkdir compiled
+	@for sourcefile in *.sp; \
 	do \
 		smxfile="`echo $$sourcefile | sed -e 's/\.sp$$/\.smx/'`"; \
 		echo "\nCompiling $$sourcefile ..."; \
