@@ -2,7 +2,7 @@
 
 ## Usage
 
-`docker pull registry.new-page.io/newpage/sourcemod-builder:latest`
+`docker pull registry.new-page.xyz/newpage/sourcemod-builder:latest`
 
 > for our gitlab-ci use `$CI_REGISTRY/newpage/sourcemod-builder:latest` to replace
 
