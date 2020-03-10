@@ -6,8 +6,8 @@ RUN set -x \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
 		make \
 		wget \
-		lib32z1 
+		lib32z1 \
 		g++-multilib \
 	&& apt-get clean autoclean \
 	&& apt-get autoremove -y \
-	&& rm -rf /var/lib/apt/lists/* \
+	&& rm -rf /var/lib/apt/lists/*
