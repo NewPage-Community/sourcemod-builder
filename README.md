@@ -1,14 +1,16 @@
-# Sourcemod Builder
+# SourceMod Builder
+
+SourceMod plugins building environment
 
 ## Usage
 
-`docker pull registry.new-page.xyz/newpage/sourcemod-builder:latest`
-
-> for our gitlab-ci use `$CI_REGISTRY/newpage/sourcemod-builder:latest` to replace
+```shell
+docker pull newpagecommunity/sourcemod-builder
+```
 
 We also recommend you to use our `makefile` to build your plugins!
 
-Only test in gitlab ci 😉
+Only test in GitLab CI 😉
 
 ## GitLab CI settings
 
@@ -19,7 +21,7 @@ before_script:
   - make env
 
 build-1.10:
-  image: $CI_REGISTRY/newpage/sourcemod-builder:latest
+  image: newpagecommunity/sourcemod-builder:latest
   stage: build
   variables:
     SOURCEMOD_VERSION: "1.10"
