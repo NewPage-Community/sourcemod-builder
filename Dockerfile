@@ -9,6 +9,7 @@ RUN set -x \
 		lib32z1 \
 		g++-multilib \
 		ca-certificates \
+		git \
 	&& apt-get clean autoclean \
 	&& apt-get autoremove -y \
 	&& rm -rf /var/lib/apt/lists/*
