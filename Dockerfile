@@ -5,7 +5,7 @@ RUN set -x \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
 		make \
-		wget \
+		curl \
 		lib32z1 \
 		g++-multilib \
 		ca-certificates \
